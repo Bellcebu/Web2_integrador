@@ -1,9 +1,9 @@
 # E-commerce - Trabajo Práctico de Medio Término
 
 ## Integrantes
-- Integrante 1
-- Integrante 2
-- Integrante 3
+- Castro Carrillo Abril
+- Suarez Perez Joshiel Xoren
+- Prado Alejandro
 
 ## Tecnologías
 - [Vite](https://vitejs.dev/)
