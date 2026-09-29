@@ -2,6 +2,7 @@ const API = "https://ecommerce.fedegonzalez.com";
 
 function GET (url){
     fetch (API+url)
+    
 }
 
 function FICHA() {
@@ -27,5 +28,15 @@ function FICHA() {
         });
 }
 FICHA()
+
+function CATEGORY(){
+    fetch(API + "/categories")
+        .then(response => response.json())
+        .then(data => {
+        console.log(data);
+    });
+
+}
+CATEGORY()
 
   
