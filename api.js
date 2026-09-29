@@ -30,13 +30,33 @@ function FICHA() {
 FICHA()
 
 function CATEGORY(){
-    fetch(API + "/categories")
+    fetch(API + "/categories/", {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer 922',
+            'accept': 'application/json'
+        }
+    })
         .then(response => response.json())
         .then(data => {
         console.log(data);
     });
 
 }
-CATEGORY()
+
+function GetProductId (){
+    fetch(API + "/products/" + 1717, {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer 922',
+            'accept': 'application/json'
+        }
+    }
+    )
+        .then(response => response.json())
+        .then(data => {
+        console.log(data);
+    });    
+}
 
   
