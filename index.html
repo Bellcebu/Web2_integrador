@@ -3,10 +3,146 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home - E-commerce</title>
+    <title>Home - E-commerce con Lit & Tailwind</title>
     <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
-  <body>
+  <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans">
+
+    <!-- 1. BARRA LATERAL DESLIZABLE (SIDEBAR) -->
+    <app-sidebar></app-sidebar>
+
+    <!-- 2. CINTA INFINITA PROMOCIONAL SUPERIOR -->
+    <infinite-ticker 
+      text="⚡ ENVÍO GRATIS EN COMPRAS MAYORES A $50.000 • 💳 12 CUOTAS SIN INTERÉS • 🚚 DESPACHO EN 24HS • 🏷️ 15% OFF PAGANDO CON TRANSFERENCIA •"
+      speed="22s"
+      variant="amber">
+    </infinite-ticker>
+
+    <!-- 3. CARRUSEL HERO BANNER -->
+    <header class="w-full px-4 pt-4">
+      <hero-carousel></hero-carousel>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL DE LA PÁGINA -->
+    <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-8 space-y-12">
+
+      <!-- SECCIÓN DE PRODUCTOS DESTACADOS (GRILLA DE CARTAS) -->
+      <section class="space-y-6">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+          <div>
+            <h2 class="text-2xl font-black text-white flex items-center gap-2">
+              🔥 Productos Destacados
+            </h2>
+            <p class="text-sm text-slate-400">Las mejores ofertas de la semana hechas con componentes Lit</p>
+          </div>
+          <a href="#" class="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1">
+            Ver catálogo completo →
+          </a>
+        </div>
+
+        <!-- GRILLA DE COMPONENTES <product-card> -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Carta 1: Auriculares -->
+          <product-card 
+            title="Auriculares Inalámbricos Pro"
+            description="Cancelación de ruido activa, micrófono HD y hasta 40 horas de autonomía."
+            price="$29.999"
+            oldPrice="$36.000"
+            category="Audio"
+            rating="4.9"
+            badge="-20% OFF"
+            image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80">
+          </product-card>
+
+          <!-- Carta 2: Smartwatch -->
+          <product-card 
+            title="Smartwatch Deportivo FitX"
+            description="Pantalla AMOLED, monitor de ritmo cardíaco, resistencia al agua IP68 y GPS."
+            price="$45.500"
+            oldPrice="$52.000"
+            category="Wearables"
+            rating="4.7"
+            badge="Popular"
+            image="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80">
+          </product-card>
+
+          <!-- Carta 3: Teclado Mecánico -->
+          <product-card 
+            title="Teclado Mecánico RGB Gamer"
+            description="Switches mecánicos táctiles, retroiluminación RGB personalizable y cable trenzado."
+            price="$38.000"
+            oldPrice="$42.000"
+            category="Gaming"
+            rating="4.8"
+            badge="Nuevo"
+            image="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=80">
+          </product-card>
+
+          <!-- Carta 4: Cámara 4K -->
+          <product-card 
+            title="Cámara 4K Ultra HD Pro"
+            description="Sensor CMOS de 24MP, grabación a 60fps y lente de enfoque automático ultrasónico."
+            price="$89.000"
+            oldPrice="$110.000"
+            category="Fotografía"
+            rating="4.9"
+            badge="-25% OFF"
+            image="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80">
+          </product-card>
+
+          <!-- Carta 5: Altavoz Bluetooth -->
+          <product-card 
+            title="Altavoz Bluetooth Portable"
+            description="Sonido envolvente 360°, graves profundos y batería resistente al agua."
+            price="$18.500"
+            oldPrice="$22.000"
+            category="Audio"
+            rating="4.6"
+            badge="Oferta"
+            image="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=600&q=80">
+          </product-card>
+
+          <!-- Carta 6: Laptop Ultrabook -->
+          <product-card 
+            title="Laptop Ultrabook Slim i7"
+            description="Procesador Intel i7 de última generación, 16GB RAM, SSD 1TB y pantalla OLED."
+            price="$340.000"
+            oldPrice="$390.000"
+            category="Computación"
+            rating="5.0"
+            badge="Top Ventas"
+            image="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80">
+          </product-card>
+
+        </div>
+      </section>
+
+      <!-- DEMOSTRACIÓN DE BOTONES -->
+      <section class="bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-700 text-center space-y-6">
+        <h3 class="text-2xl font-extrabold text-blue-400">Variantes del Componente Botón</h3>
+        <p class="text-slate-300 text-sm">
+          Los componentes de Lit se pueden combinar fácilmente para formar interfaces completas.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <my-button label="Guardar Cambios" variant="primary"></my-button>
+          <my-button label="Cancelar" variant="secondary"></my-button>
+          <my-button label="Eliminar" variant="danger"></my-button>
+          <my-button variant="primary">🚀 Lanzar Proyecto</my-button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 4. CINTA INFINITA INFERIOR -->
+    <infinite-ticker 
+      text="🌟 ÚLTIMAS UNIDADES EN STOCK • 🎁 REGALO CON TU COMPRA • 📦 ENVÍOS A TODO EL PAÍS • 🛡️ GARANTÍA DE 1 AÑO •"
+      speed="18s"
+      variant="indigo">
+    </infinite-ticker>
+
+    <!-- Script principal -->
     <script type="module" src="/src/pages/home.js"></script>
   </body>
 </html>
