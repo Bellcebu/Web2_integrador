@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+/* Definimos la animación de desplazamiento infinito */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Clase utilitaria para activar la animación */
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee var(--marquee-duration, 20s) linear infinite;
+}
+
+/* Pausa la cinta al pasar el mouse por encima */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
