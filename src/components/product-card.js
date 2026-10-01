@@ -11,7 +11,7 @@ export class ProductCard extends LitElement {
     category: { type: String },
     rating: { type: Number },
     badge: { type: String },
-    
+
     isFavorite: { type: Boolean },
     inCart: { type: Boolean }
   };
@@ -102,11 +102,10 @@ export class ProductCard extends LitElement {
 
           <button 
             @click="${(e) => { e.preventDefault(); e.stopPropagation(); this.addToCart(); }}"
-            class="p-2 sm:px-2.5 sm:py-1 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer flex items-center gap-1 active:scale-95 border ${
-              this.inCart 
-                ? 'bg-emerald-600 text-white border-emerald-600 shadow-emerald-600/30' 
-                : 'bg-slate-100 hover:bg-slate-200 text-slate-800 border-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 dark:text-slate-100 dark:border-slate-600'
-            }"
+            class="p-2 sm:px-2.5 sm:py-1 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer flex items-center gap-1 active:scale-95 border ${this.inCart
+        ? 'bg-emerald-600 text-white border-emerald-600 shadow-emerald-600/30'
+        : 'bg-slate-100 hover:bg-slate-200 text-slate-800 border-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 dark:text-slate-100 dark:border-slate-600'
+      }"
             title="Agregar al carrito"
           >
             ${this.inCart ? html`
