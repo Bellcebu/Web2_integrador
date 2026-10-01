@@ -3,7 +3,7 @@ export const API_TOKEN = '922';
 
 export async function apiFetch(endpoint) {
   const url = endpoint.startsWith('http') ? endpoint : `${API_BASE_URL}${endpoint}`;
-  
+
   const response = await fetch(url, {
     method: 'GET',
     headers: {
